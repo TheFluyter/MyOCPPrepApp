@@ -1,0 +1,4 @@
+question, answer
+Which exam are we prepping for?,OCP 11!
+What is the method signature of the Supplier interfaces abstract method?,T get()
+Provide the parameter type for Collector.maxBy(?),Predicate
