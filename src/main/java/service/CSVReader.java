@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSVReader {
-    QuestionBuilder questionBuilder = new QuestionBuilder();
-    private final String pathName = "/Users/sparerotterdam/Development/projects/testground/MyOCPPrepApp/src/main/resources/OCPQuestions.csv";
-
-    public void readCSVFile() {
+    public void readCSVFile(String pathName) {
         List<Question> questions = new ArrayList<>();
 
         try {
@@ -22,13 +19,9 @@ public class CSVReader {
                     .build()
                     .parse();
         } catch (FileNotFoundException e) {
-            // TODO
+            e.printStackTrace();
+            System.err.println("No such file found: " + pathName);
         }
-
         Questions.addQuestionList(questions);
-    }
-
-    private void provideQuestionAndAnswer(String question, String answer) {
-        questionBuilder.makeQuestion(question, answer);
     }
 }

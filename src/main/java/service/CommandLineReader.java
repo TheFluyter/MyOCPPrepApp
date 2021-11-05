@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class CommandLineReader {
 
-    public static void readCommandLine() {
+    public static String readCommandLine() {
         Scanner scanner = new Scanner(System.in);
-        scanner.next();
+        return scanner.next();
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Questions {
-    private static int numberOfQuestions = 0;
+    private static int numberOfQuestions;
     private final static List<Question> questions = new ArrayList<>();
 
     public static void addQuestion(Question question) {
@@ -17,7 +17,7 @@ public class Questions {
         numberOfQuestions += newQuestions.size();
     }
 
-    public static Question getQuestion() {
+    public static Question getRandomQuestion() {
         return questions.get(randomQuestionNumber());
     }
 

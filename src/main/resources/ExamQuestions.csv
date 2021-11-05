@@ -1,0 +1,13 @@
+question,answer
+What is the method signature of the Supplier interface's abstract method?,T get()
+What is the method signature of the Predicate interface's abstract method?,boolean test(T t)
+Provide the parameter type for Collector.maxBy(?),Predicate
+Name all the 11 terminal stream operations.,count min max findAny findFirst allMatch anyMatch noneMatch forEach reduce collect
+Name all the 8 intermediate stream operations.,filter distinct limit skip map flatMap sorted peek
+What is the correct way to load a service provider that implements a BloggerSerivce?,api.BloggerService bloggerServiceRef = ServiceLoader.load(api.BloggerService.class);
+Which 4 terminal operations can terminate the stream prematurely?,findAny findFirst allMatch noneMatch
+When does String .isBlank() return true?,If the string is empty or contains only white space
+When does String .ieEmpty() return true?,If - and only if - length() is 0. Thus it will return false even if the string contains only spaces
+What does the Map .push() method do?,It adds the provided element at te front of the queue
+What does the Map .add() method do?,It adds the provided element at the end of the queue
+What does the Map .poll() method do?,It removes and returns the next element or returns null if empty queue
