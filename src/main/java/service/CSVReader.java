@@ -2,7 +2,6 @@ package service;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import domain.Question;
-import domain.Questions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSVReader {
-    public void readCSVFile(String pathName) {
+    public List<Question> readQuestionsFromCSV(String pathName) {
         List<Question> questions = new ArrayList<>();
 
         try {
@@ -22,6 +21,6 @@ public class CSVReader {
             e.printStackTrace();
             System.err.println("No such file found: " + pathName);
         }
-        Questions.addQuestionList(questions);
+        return questions;
     }
 }

@@ -1,27 +1,25 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Questions {
-    private static int numberOfQuestions;
-    private final static List<Question> questions = new ArrayList<>();
 
-    public static void addQuestion(Question question) {
-        questions.add(question);
-        numberOfQuestions++;
+    private final List<Question> questions = new ArrayList<>();
+    public int numberOfQuestions;
+
+    public Questions(List<Question> questions) {
+        this.questions.addAll(questions);
+        shuffleQuestions();
+        numberOfQuestions += questions.size();
     }
 
-    public static void addQuestionList(List<Question> newQuestions) {
-        questions.addAll(newQuestions);
-        numberOfQuestions += newQuestions.size();
+    public void shuffleQuestions() {
+        Collections.shuffle(questions);
     }
 
-    public static Question getRandomQuestion() {
-        return questions.get(randomQuestionNumber());
-    }
-
-    public static int randomQuestionNumber() {
-        return (int) (Math.random() * (numberOfQuestions));
+    public List<Question> getQuestions() {
+        return questions;
     }
 }

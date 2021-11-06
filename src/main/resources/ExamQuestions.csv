@@ -7,7 +7,9 @@ Name all the 8 intermediate stream operations.,filter distinct limit skip map fl
 What is the correct way to load a service provider that implements a BloggerSerivce?,api.BloggerService bloggerServiceRef = ServiceLoader.load(api.BloggerService.class);
 Which 4 terminal operations can terminate the stream prematurely?,findAny findFirst allMatch noneMatch
 When does String .isBlank() return true?,If the string is empty or contains only white space
-When does String .ieEmpty() return true?,If - and only if - length() is 0. Thus it will return false even if the string contains only spaces
-What does the Map .push() method do?,It adds the provided element at te front of the queue
-What does the Map .add() method do?,It adds the provided element at the end of the queue
-What does the Map .poll() method do?,It removes and returns the next element or returns null if empty queue
+When does String .isEmpty() return true?,If - and only if - length() is 0. Thus it will return false even if the string contains only spaces
+What does the Queue .push() method do?,It adds the provided element at te front of the queue
+What does the Queue .add() method do?,It adds the provided element at the end of the queue
+What does the Queue .poll() method do?,It removes and returns the next element or returns null if empty queue
+How does the Path method .relativize() work?,It navigates from the path to the path in the argument: 1) assumed to be in the working directory if both paths are relative 2) path is computed if both are absolute 3) throws an exception when absolute and relative are mixed
+What is the natural order of Enums?,The order in which they are declared
