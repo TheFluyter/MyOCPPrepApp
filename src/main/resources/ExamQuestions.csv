@@ -1,11 +1,5 @@
 question,answer
-What is the method signature of the Supplier interface's abstract method?,T get()
-What is the method signature of the Predicate interface's abstract method?,boolean test(T t)
 Provide the parameter type for Collector.maxBy(?),Predicate
-Name all the 11 terminal stream operations.,count min max findAny findFirst allMatch anyMatch noneMatch forEach reduce collect
-Name all the 8 intermediate stream operations.,filter distinct limit skip map flatMap sorted peek
-What is the correct way to load a service provider that implements a BloggerService?,api.BloggerService bloggerServiceRef = ServiceLoader.load(api.BloggerService.class);
-Which 5 terminal operations can terminate the stream prematurely?,findAny findFirst anyMatch allMatch noneMatch
 When does String .isBlank() return true?,If the string is empty or contains only white space
 When does String .isEmpty() return true?,If - and only if - length() is 0. Thus it will return false even if the string contains only spaces
 What does the Queue .push() method do?,It adds the provided element at te front of the queue
@@ -18,20 +12,17 @@ How does the Arrays.compare() method work?,It returns -1 if the first array is '
 How does the Arrays.mismatch() method work?,It returns the index at which the arrays start to differ or -1 when they are the same
 How do you instantiate an inner class?,new outerClass().new innerClass()
 How do you instantiate a static inner class?,new outerClass.innerClass()
-A gentle reminder for chaining variables:,Chaining to use a value of a variable at the time of declaration is not allowed
 A gentle reminder for .forEach method:,It is also provided by the Collection interface and takes a Consumer<T> interface as argument
 What does the Path.subpath() method do?,"It creates a subpath starting from beginIndex > root is not considered as beginning > endIndex is excluded > paths do not start or end with forwardslash"
-Name the three Files stream methods.,walk() find() lines()
 What is the method signature of the Files stream method walk()?,"public static Stream<Path> walk(Path start, FileVisitOption... options) throws IOException, OR: public static Stream<Path> walk(Path start, int maxDepth, FileVisitOption... options) throws IOException"
 What is the method signature of the Files stream method find()?,"public static Stream<Path> find(Path start, int maxDepth, BiPredicate<Path, FileAttributes> matcher, FileVisitOption... options) throws IOException"
 What is the method signature of the Files stream method lines()?, "public static Stream<Path> lines(Path path) throws IOException"
 What are/is the method argument(s) of the Map.computeIfAbsent() method and what does it do?,"arguments: K key, Function<? super K, ? extends V> mappingFunction. This method checks if the key exists in the map. If it does, the method just returns the value associated with that key. If it doesn't, the method executes the Function, associates the value returned by that Function in the map with that key, and returns that value."
 What happens when the Collection.of or Collection.copyOf method are provided with a null value?,It throws a NullPointerException
 Which Queue method throws an Exception when the queue is empty: poll or pop?,pop
-What kind of variables can a lambda uses?,"instance variables, static variables and final or effectively final variables"
+What kind of variables can a lambda uses?,"instance variables, static variables and final or effectively final local variables"
 A module can export only ... and specifies a requires statement if it needs other ...,packages and modules
-NoSuchFileException and AccessDeniedException are subclasses of which Exception?,IOException
-How can you declare a resource in a try-with-resources declaration?,By declaring a resource including a type (Statement stm = c.createStatement()) or using a final of effectively final variable (stm) but (stm = c.createStatement()) still isn't allowed
+kHow can you declare a resource in a try-with-resources declaration?,By declaring a resource including a type (Statement stm = c.createStatement()) or using a final of effectively final variable (stm) but (stm = c.createStatement()) still isn't allowed
 What is the difference with Exceptions thrown in constructors and in methods?,"A constructor must declare all checked Exception thrown in the base constructor (they may add exceptions as well), an overridden method cannot throw any checked exceptions other than what the overridden method throws (it may throw subclasses of the exceptions as well)"
 What happens when you add a String to a List without a generic type?,The compiler generates a warning which can be removed using @SuppressWarnings("unchecked")
 What is a marker annotation and what is optional while using a marker annotation?,An annotation without any elements is called a marker annotation and parentheses are optional when using a marker annotation
@@ -39,18 +30,23 @@ When is an annotation value required and when optional?,"If a value has the defa
 What are the legal types for an annotation element?,"primitive (not wrapper), String, Class, enum, another annotation or an array(not double array or Collection)"
 What are the rules of using a value() element in an annotation without an element name?,"The annotation declaration must contain an element named value() (optional or default), and the annotation declaration must not contain any other elements that are required, and the annotation usages must not provide any other elements"
 What are the two rules for setting up a @Repeatable annotation?,"The repeatable annotation must be declared with @Repeatable and contain a value that refers to the containing type annotation; the containing type annotation must include an element named value(), which is a primitive array of the repeatable annotation type"
-Wat are the AtomicInteger/-Long methods?,"get, set, getAndSet, incrementAndSet, getAndIncrement, decrementAndSet, getAndDecrement, addAndGet(), getAndAdd"
+What are the AtomicInteger/-Long methods?,"get, set, getAndSet, incrementAndSet, getAndIncrement, decrementAndSet, getAndDecrement, addAndGet(), getAndAdd"
 What are the two method signatures for setting a custom locale?,"static void setDefault(Local newLocale), static void setDefault(Locale.Category cat, Local newLocale)"
 Which methods are provided by enums and what do they do?,"toString, values() > returns an array of all values, valueOf() > retrieve an enum value from a string(must match exactly or else IllegalArgumentException), ordinal() > shows an int of the order of declaration"
-What are the rules to keep in mind when when adding constructors variables and/or methods?,"1) ending a list of enums with a semicolon is only optional when there are only enum values, 2) all constructors are implicitly final, 3) abstract methods are required to be implemented, overriding a default method is optional"
+What are the rules to keep in mind when adding constructors/variables/methods to an Enum?,"1) ending a list of enums with a semicolon is only optional when there are only enum values, 2) all constructors are implicitly final, 3) abstract methods are required to be implemented, overriding a default method is optional"
 What are the Collection method return types and parameters: add/remove/isEmpty/size/clear/contains/removeIf/forEach?,"boolean add(E element), boolean remove(Object obj),boolean remove(int index),boolean isEmpty(),int size(),void clear(),boolean contains(Object obj),boolean removeIf(Predicate<> pred),void forEach(Consumer<> action)"
 What are the List method return types and parameters: add/get/remove/replaceAll/set?,"boolean add(E element)?,void add(int index, E element), E get(int index), E remove(int index), int remove(Object o), void replaceAll(UnaryOperator<E> op), E set(int index, E element)"
 What interface does a resource need to implement to use in a try-with-resources statement?,AutoCloseable or Closeable otherwise the code won't compile
-What is the pre-condition for using the Arrays.binarySearch method and what does it return?,"The output cannot be determined when the array is not sorted. The index of the search key is returned or (-(index for insertion) -1)"
+What is the pre-condition for using the Arrays.binarySearch method and what does it return?,"The output cannot be determined when the array is not sorted. The index of the search key is returned or (-(index for insertion)) -1"
 Which four lock methods do you need to know for the exam and what do they do?,"void lock() > requests a lock and block until required, void lock(boolean fairness) > the locks usually be granted access in order of request when true, boolean tryLock() > requests a lock and returns immediately returns a boolean whether successful, boolean tryLock(long time, TimeUnit tu) > same as non argument method but waits provided time."
 What option names are equivalent to -cp and -p on the javac command?,"--class-path or -classpath, --module-path"
-What are the rules for using multiple exceptions in a multi-catch block?,the exception can't be from the same hierarchy tree
-A gentle reminder:,a generic type is assumed to be an object when no generic type is provided
+What are the rules for using multiple exceptions in a multi-catch block?,the exceptions can't be from the same hierarchy tree
+A gentle reminder for generic types:,a generic type is assumed to be an object when no generic type is provided and you can't use primitives as a generic type
 What are the four key JDBC interfaces?,"Driver, Connection, ResultSet and PrepareStatement"
 What types are supported in a switch statement?,"char, byte, short, int and their wrapper classes, String, enumerated types and var (under some circumstances: if the type can resolve to any of the previous types)"
 A gentle reminder about enums:,"their constructors are implicitly private and when an enum value is used in a switch statement it must be used without the type (so Seasons.FALL is incorrect, but FALL is correct), with the switch value it's the other way around"
+What is the correct way to call an inherited method of a default method within an instance method?,InterfaceClassName.super.methodName()
+What are the method signatures for the Scheduled executor service methods: schedule() scheduleAtFixedRate() and scheduleWithFixedDelay()?,"schedule(Callable<V> callable, long delay, TimeUnit unit), schedule(Runnable command, long delay, TimeUnit unit), scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit), scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)"
+What does the execute() method returns?,"It returns a boolean containing true when the first result is a ResultSet, or false when the first result is a update count or no result"
+Which jdeps commands show a table of suggestions if any internal APIs are used in the jar?,"jdeps -jdkinternals jarname.jar, jdeps --jdk-internals jarname.jar"
+How do you create a Locale?,"With the Builder class > new Locale.Builder().setLanguage(\"fr\").setRegion(\"CA\").build, with the constructor > new Locale(\"fr\") or new Locale(\"fr\", \"FR\"), or with a locale constant > locale.CANADA.FRENCH"
